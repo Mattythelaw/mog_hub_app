@@ -1,3 +1,8 @@
+import { StatusBar } from 'expo-status-bar';
+import { Text, TextInput, View, Image, SafeAreaView, ScrollView } from 'react-native';
+import { useState } from 'react';
+import styles from '../components/styles';
+
 function MainScreen(){
 
     const [petName, setPetName] = useState('');
@@ -7,47 +12,26 @@ function MainScreen(){
         <SafeAreaView>
             <ScrollView>
                 <Image style={styles.mogHubLogo} 
-                source={('../_images/cat-logo.jpg')}/>
-                <Text style={StyleSheet.mainTxt}>Mog Hub</Text>
-                <Text style={StyleSheet.slogan}>P u r r f e c t  C o m p a n i o n s</Text>
+                source={require('../_images/cat-logo.jpg')}/>
 
-                <View style={StyleSheet.inputFlex}>
-                    <Text style={StyleSheet.enterTxt}>Name Your Pet:</Text>
-                    <TextInput style={StyleSheet.userInputTxt}
+                <Text style={styles.mainTxt}>Mog Hub</Text>
+                <Text style={styles.slogan}>P u r r f e c t  C o m p a n i o n s</Text>
+
+                <View style={styles.inputFlex}>
+                    <Text style={styles.enterTxt}>Name Your Pet:</Text>
+                    <TextInput style={styles.userInputTxt}
                     placeholder="Mog"
                     value={petName}
                     onChangeText={newText => setPetName(newText)}/>
                 </View>    
                 
-                <StatusBar style="auto" />
+                <StatusBar style="auto"/>
+
             </ScrollView>
         </SafeAreaView> 
        </View> 
-    }
+    };
 }
 
-const styles = StyleSheet.create({
-    mainTxt : {
-        paddingTop: 50,
-        color: 'green',
-        fontWeight: 'bold',
-        fontSize: '30',
-        textAlign: 'center'
-    },
+export default MainScreen;
 
-    slogan: {
-        color: 'orange',
-        fontSize: 20,
-        textAlign: 'center'
-    },
-
-    mogHubLogo: {
-        height: 350,
-        width: 350,
-        paddingTop: 25,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-
-
-})
