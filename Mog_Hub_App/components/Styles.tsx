@@ -2,11 +2,12 @@ import { StyleSheet } from "react-native";
 
 
 const styles = StyleSheet.create({
+
     mainTxt : {
         paddingTop: 50,
         color: 'green',
         fontWeight: 'bold',
-        fontSize: '30',
+        fontSize: 30,
         textAlign: 'center'
     },
 
@@ -40,4 +41,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default StyleSheet;
+export default styles;

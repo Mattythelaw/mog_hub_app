@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, TextInput, View, Image, SafeAreaView, ScrollView } from 'react-native';
+import { View, SafeAreaView, ScrollView, Image, Text, TextInput } from 'react-native';
 import { useState } from 'react';
-import styles from '../components/styles';
+import { RadioButton } from 'react-native-paper';
+import styles from '../components/Styles';
 
 function MainScreen(){
 
     const [petName, setPetName] = useState('');
+    const [ selectedValue, setSelectedValue ] = useState('0');
 
-    return{
+    return(
        <View>
         <SafeAreaView>
             <ScrollView>
@@ -30,7 +32,7 @@ function MainScreen(){
             </ScrollView>
         </SafeAreaView> 
        </View> 
-    };
+    );
 }
 
 export default MainScreen;
