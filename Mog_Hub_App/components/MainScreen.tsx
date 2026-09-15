@@ -35,19 +35,41 @@ function MainScreen(){
 
                         <View style={styles.radioContainer}>
                             <View style={styles.radioGroup}>
+
                                 {/* radio button for cat */}
                                 <View style={styles.radioBtn}>
-
+                                    <RadioButton.Android
+                                        value="1"
+                                        status={selectedValue == "1" ? 'checked' : 'unchecked'}
+                                        onPress={() => setSelectedValue('1') }
+                                        color="orange"
+                                    />
+                                    <Text style={styles.radioLabel}>Cat</Text>
                                 </View>
+
                                 {/* radio button for dog */}
                                  <View style={styles.radioBtn}>
+                                    <RadioButton.Android
+                                        value="2"
+                                        status={selectedValue == "2" ? 'checked' : 'unchecked'}
+                                        onPress={() => setSelectedValue('2') }
+                                        color="orange"
+                                    />
+                                    <Text  style={styles.radioLabel}>Dog</Text>
 
                                 </View>
+
                                 {/* radio button for other */}
                                  <View style={styles.radioBtn}>
+                                    <RadioButton.Android
+                                        value="3"
+                                        status={selectedValue == "3" ? 'checked' : 'unchecked'}
+                                        onPress={() => setSelectedValue('3') }
+                                        color="orange"
+                                    />
+                                    <Text  style={styles.radioLabel}>Other</Text>
 
                                 </View>
-
                        </View>
                     </View>
                 </View>
