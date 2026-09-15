@@ -24,11 +24,33 @@ function MainScreen(){
                     <TextInput style={styles.userInputTxt}
                     placeholder="Mog"
                     value={petName}
-                    onChangeText={newText => setPetName(newText)}/>
+                    onChangeText={newText => setPetName(newText)}
+                    />
                 </View>    
                 
-                <StatusBar style="auto"/>
+                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                    <Text style={{ fontWeight: 'bold', fontSize: 18 }}>
+                        Select your Pet:
+                        </Text>
 
+                        <View style={styles.radioContainer}>
+                            <View style={styles.radioGroup}>
+                                {/* radio button for cat */}
+                                <View style={styles.radioBtn}>
+
+                                </View>
+                                {/* radio button for dog */}
+                                 <View style={styles.radioBtn}>
+
+                                </View>
+                                {/* radio button for other */}
+                                 <View style={styles.radioBtn}>
+
+                                </View>
+
+                       </View>
+                    </View>
+                </View>
             </ScrollView>
         </SafeAreaView> 
        </View> 

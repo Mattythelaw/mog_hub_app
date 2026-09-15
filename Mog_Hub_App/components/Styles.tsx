@@ -39,6 +39,42 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1
     }, 
 
+    radioContainer: {
+        flex: 0,
+        backgroundColor: 'yellow',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    radioGroup: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        marginTop: 20,
+        borderRadius: 10,
+        backgroundColor: 'white',
+        padding: 15,
+        elevation: 5,
+        shadowColor: 'grey',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3,
+    },
+
+    radioBtn: {
+        flexDirection: 'column',
+        alignItems: 'center'
+    },
+
+    radioLabel: {
+        marginLeft: 5,
+        fontSize: 15,
+        color: 'black'
+    }
+
 });
 
 export default styles;
