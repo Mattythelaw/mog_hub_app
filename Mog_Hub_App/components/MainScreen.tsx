@@ -13,6 +13,8 @@ function MainScreen(){
     // setPetName = the ONLY way you should change it
     // The started value is '' which is an empty string = empty text box
     const [petName, setPetName] = useState('');
+    // Task for adding pet type with name
+    const [ petType, setPetType ] = useState('');
 
     // This remembers which radio button is picked. '0' means "none picked yet"
     // since the buttons are are '1', '2', '3'
@@ -67,8 +69,9 @@ function MainScreen(){
                                 <View style={styles.radioBtn}>
                                     <RadioButton.Android
                                         value="1"
-                                        status={selectedValue == "1" ? 'checked' : 'unchecked'}
-                                        onPress={() => setSelectedValue('1') }
+                                        // Task for adding pet type with name
+                                        status={selectedValue == "Cat" ? 'checked' : 'unchecked'}  
+                                        onPress={() => setPetType('Cat') }
                                         color="orange"
                                     />
                                     <Text style={styles.radioLabel}>Cat</Text>
@@ -110,6 +113,7 @@ function MainScreen(){
                     }}
                 />
                 <View style={styles.petContainer}>
+                    {/* Takes pet names */}
                     {renderPets()}
 
                 </View>
