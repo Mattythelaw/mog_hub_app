@@ -17,6 +17,20 @@ function MainScreen(){
     // This remembers which radio button is picked. '0' means "none picked yet"
     // since the buttons are are '1', '2', '3'
     const [ selectedValue, setSelectedValue ] = useState('0');
+    const [pet, setPet] = useState<string[]> ([]);
+
+    const renderPets = () => {
+        const arrDisplay = [];
+
+        for(let i=0; i < pet.length; i++){
+            arrDisplay.push(
+                <View>
+                    
+                </View>
+            )
+
+        }
+    }
 
     return(
        <View>
