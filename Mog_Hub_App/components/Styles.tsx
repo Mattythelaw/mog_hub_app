@@ -91,7 +91,11 @@ const styles = StyleSheet.create({
         marginVertical: 5,
         borderBlockColor: 'black',
         borderBottomWidth: 1,
-        
+
+    },
+
+    petContainer: {
+        flex: 5
     }
 
 });

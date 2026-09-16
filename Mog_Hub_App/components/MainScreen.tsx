@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, SafeAreaView, ScrollView, Image, Text, TextInput } from 'react-native';
+import { View, Button, SafeAreaView, ScrollView, Image, Text, TextInput, } from 'react-native';
 // useState = how a components rememebers things
 import { useState } from 'react';
 // A ready made circular button that you tap on
@@ -29,9 +29,10 @@ function MainScreen(){
                         {pet[i]}
                     </Text>
                 </View>
-            )
+            );
 
         }
+        return arrDisplay;
     }
 
     return(
@@ -94,11 +95,26 @@ function MainScreen(){
                                         color="orange"
                                     />
                                     <Text  style={styles.radioLabel}>Other</Text>
-
                                 </View>
+
                        </View>
                     </View>
                 </View>
+
+                <Button title="Add Pet"
+                    onPress={() => {
+                        // Dots mean it takes the entire object
+                        setPet([...pet, petName]);
+                        setPetName("");
+
+                    }}
+                />
+                <View style={styles.petContainer}>
+                    {renderPets()}
+
+                </View>
+
+            
             </ScrollView>
         </SafeAreaView> 
        </View> 
