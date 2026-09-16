@@ -1,16 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { View, SafeAreaView, ScrollView, Image, Text, TextInput } from 'react-native';
+// useState = how a components rememebers things
 import { useState } from 'react';
+// A ready made circular button that you tap on
 import { RadioButton } from 'react-native-paper';
 import styles from '../components/Styles';
 
 function MainScreen(){
 
+    // useState is for two things here:
+    // petName = the value right now 
+    // setPetName = the ONLY way you should change it
+    // The started value is '' which is an empty string = empty text box
     const [petName, setPetName] = useState('');
+
+    // This remembers which radio button is picked. '0' means "none picked yet"
+    // since the buttons are are '1', '2', '3'
     const [ selectedValue, setSelectedValue ] = useState('0');
 
     return(
        <View>
+        {/*  */}
         <SafeAreaView>
             <ScrollView>
                 <Image style={styles.mogHubLogo} 
