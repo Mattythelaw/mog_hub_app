@@ -81,10 +81,18 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        margin: 25,
+        marginVertical: 25,
         borderBottomWidth: 1,
         borderBottomColor: '#ab5f08'
     },
+
+    petTxt: {
+        fontSize: 15,
+        marginVertical: 5,
+        borderBlockColor: 'black',
+        borderBottomWidth: 1,
+        
+    }
 
 });
 

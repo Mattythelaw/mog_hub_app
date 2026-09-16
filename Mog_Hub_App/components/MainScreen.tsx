@@ -24,8 +24,10 @@ function MainScreen(){
 
         for(let i=0; i < pet.length; i++){
             arrDisplay.push(
-                <View>
-                    
+                <View key={i} style={styles.inputContainer}>
+                    <Text style={styles.petTxt}>
+                        {pet[i]}
+                    </Text>
                 </View>
             )
 
