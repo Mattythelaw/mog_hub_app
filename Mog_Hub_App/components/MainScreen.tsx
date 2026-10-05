@@ -116,9 +116,8 @@ function MainScreen(){
                     {/* Takes pet names */}
                     {renderPets()}
 
-                </View>
-
-            
+                    </View>
+                <StatusBar style='auto' />
             </ScrollView>
         </SafeAreaView> 
        </View> 
