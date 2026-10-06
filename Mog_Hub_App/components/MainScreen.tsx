@@ -70,7 +70,7 @@ function MainScreen(){
                                     <RadioButton.Android
                                         value="1"
                                         // Task for adding pet type with name
-                                        status={selectedValue == "Cat" ? 'checked' : 'unchecked'}  
+                                        status={petType == "Cat" ? 'checked' : 'unchecked'}  
                                         onPress={() => setPetType('Cat') }
                                         color="orange"
                                     />
@@ -81,7 +81,7 @@ function MainScreen(){
                                  <View style={styles.radioBtn}>
                                     <RadioButton.Android
                                         value="2"
-                                        status={selectedValue == "2" ? 'checked' : 'unchecked'}
+                                        status={petType == "Dog" ? 'checked' : 'unchecked'}
                                         onPress={() => setSelectedValue('2') }
                                         color="orange"
                                     />
@@ -93,7 +93,7 @@ function MainScreen(){
                                  <View style={styles.radioBtn}>
                                     <RadioButton.Android
                                         value="3"
-                                        status={selectedValue == "3" ? 'checked' : 'unchecked'}
+                                        status={petType == "Other" ? 'checked' : 'unchecked'}
                                         onPress={() => setSelectedValue('3') }
                                         color="orange"
                                     />
@@ -107,8 +107,9 @@ function MainScreen(){
                 <Button title="Add Pet"
                     onPress={() => {
                         // Dots mean it takes the entire object
-                        setPet([...pet, petName]);
+                        setPet([...pet, petName + " - " + petType ]);
                         setPetName("");
+                        setPetType("");
 
                     }}
                 />
