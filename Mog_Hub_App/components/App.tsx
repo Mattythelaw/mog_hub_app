@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createMaterialTopTabNavigator, MaterialTopTabScreenProps } from '@react-navigation/material-top-tabs';
 
 //Importing active screen components
 import MainScreen from './MainScreen';
@@ -8,6 +8,7 @@ import Bookings from './Bookings';
 import Gallery from './Gallery';
 import Membership from './Membership';
 import Volunteer from './Volunteer';
+import { StatusBar } from 'expo-status-bar';
 
 // Names of all the the tabs 
 export type TabParamList = {
@@ -19,3 +20,36 @@ export type TabParamList = {
 };
 
 // Adding the navigator which switches between screens
+const Tab = createMaterialTopTabNavigator<TabParamList>();
+
+// Added the prop types so that each screen can use navigation
+export type MainScreenProps = MaterialTopTabScreenProps<TabParamList, 'Home'>;
+export type BookingsProps = MaterialTopTabScreenProps<TabParamList, 'Bookings'>;
+export type GalleryProps = MaterialTopTabScreenProps<TabParamList, 'Gallery'>;
+export type MembershipProps = MaterialTopTabScreenProps<TabParamList, 'Membership'>;
+export type VolunteerProps = MaterialTopTabScreenProps<TabParamList, 'Volunteer'>;
+
+export default function App() {
+  return (
+    <NavigationContainer>
+
+      <StatusBar style="auto" />
+
+      <Tab.Navigator screenOptions={{tabBarStyle: { marginTop: 30}, tabBarScrollEnabled: true,}}>
+
+        <Tab.Screen name="Home" component={MainScreen} />
+
+        <Tab.Screen name="Bookings" component={Bookings} />
+
+        <Tab.Screen name="Gallery" component={Gallery} />
+
+        <Tab.Screen name="Membership" component={Membership} />
+
+        <Tab.Screen name="Volunteer" component={Volunteer} />
+
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+
