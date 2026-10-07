@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+//Importing active screen components
+import MainScreen from './MainScreen';
+import Bookings from './Bookings';
+import Gallery from './Gallery';
+import Membership from './Membership';
+import Volunteer from './Volunteer';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// Names of all the the tabs 
+export type TabParamList = {
+  Home: undefined;
+  Bookings: undefined;
+  Gallery: undefined;
+  Membership: undefined;
+  Volunteer: undefined;
+};
+
+// Adding the navigator which switches between screens
