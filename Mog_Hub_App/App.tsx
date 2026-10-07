@@ -3,11 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator, MaterialTopTabScreenProps } from '@react-navigation/material-top-tabs';
 
 //Importing active screen components
-import MainScreen from './MainScreen';
-import Bookings from './Bookings';
-import Gallery from './Gallery';
-import Membership from './Membership';
-import Volunteer from './Volunteer';
+import MainScreen from './components/MainScreen'
+import Bookings from './components/Bookings';
+import Gallery from './components/Gallery';
+import Membership from './components/Membership';
+import Volunteer from './components/Volunteer';
 import { StatusBar } from 'expo-status-bar';
 
 // Names of all the the tabs 

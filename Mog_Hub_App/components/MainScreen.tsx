@@ -82,7 +82,7 @@ function MainScreen(){
                                     <RadioButton.Android
                                         value="2"
                                         status={petType == "Dog" ? 'checked' : 'unchecked'}
-                                        onPress={() => setSelectedValue('2') }
+                                        onPress={() => setPetType('2') }
                                         color="orange"
                                     />
                                     <Text  style={styles.radioLabel}>Dog</Text>
@@ -94,7 +94,7 @@ function MainScreen(){
                                     <RadioButton.Android
                                         value="3"
                                         status={petType == "Other" ? 'checked' : 'unchecked'}
-                                        onPress={() => setSelectedValue('3') }
+                                        onPress={() => setPetType('3') }
                                         color="orange"
                                     />
                                     <Text  style={styles.radioLabel}>Other</Text>
