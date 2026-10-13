@@ -105,9 +105,36 @@ const styles = StyleSheet.create({
     },
 
     petContainer: {
-        flex: 5
-    }
+        flex: 5,
+    },
 
+    // Styling the booking page
+    bookingsContainer: {
+        flex: 1,
+        backgroundColor: '#f9d77e',
+    },
+
+    stepContainer: {
+        paddingHorizontal: 20,
+        paddingVertical: 15,
+    },
+
+    stepNumber: {
+        height: 60,
+        width: 60,
+        alignSelf: 'center',
+        marginBottom:10,
+    },
+
+    stepTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 5,
+    },
+
+    stepDesc: {
+        fontSize: 12,
+    },
 });
 
 export default styles;
