@@ -4,22 +4,26 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
 
     mainTxt : {
-        paddingTop: 50,
+        paddingTop: 10,
         color: 'green',
         fontWeight: 'bold',
-        fontSize: 30,
+        fontSize: 25,
         textAlign: 'center'
     },
 
     slogan: {
         color: 'orange',
-        fontSize: 20,
+        fontSize: 15,
         textAlign: 'center'
     },
 
     mogHubLogo: {
-        height: 350,
-        width: 350,
+        height: 250,
+        width: "auto",
+        alignSelf: "stretch",
+        marginHorizontal: 15,
+        marginTop: 15,
+        borderRadius: 10,
         paddingTop: 25,
         justifyContent: 'center',
         alignItems: 'center'
@@ -27,33 +31,39 @@ const styles = StyleSheet.create({
 
     inputFlex: {
         flexDirection: 'row',
-        marginTop: 25,
-        justifyContent: 'space-evenly'
+        marginTop: 15,
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        marginBottom: 20,
     },
 
     enterTxt: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
 
     userInputTxt: {
-        borderBottomWidth: 1
+        borderBottomWidth: 1,
+        paddingVertical: 0,
+        minWidth: 100,
     }, 
 
     radioContainer: {
         flex: 0,
-        backgroundColor: 'yellow',
+        backgroundColor: 'green',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingBottom: 10,
+        marginBottom: 20,
     },
 
     radioGroup: {
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
-        marginTop: 20,
-        borderRadius: 10,
+        marginTop: 10,
+        borderRadius: 20,
         backgroundColor: 'white',
-        padding: 15,
+        padding: 10,
         elevation: 5,
         shadowColor: 'grey',
         shadowOffset: {
