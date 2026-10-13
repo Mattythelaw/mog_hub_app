@@ -25,9 +25,10 @@ const Tab = createMaterialTopTabNavigator<TabParamList>();
 // Added the prop types so that each screen can use navigation
 export type MainScreenProps = MaterialTopTabScreenProps<TabParamList, 'Home'>;
 export type BookingsProps = MaterialTopTabScreenProps<TabParamList, 'Bookings'>;
+export type VolunteerProps = MaterialTopTabScreenProps<TabParamList, 'Volunteer'>;
 export type GalleryProps = MaterialTopTabScreenProps<TabParamList, 'Gallery'>;
 export type MembershipProps = MaterialTopTabScreenProps<TabParamList, 'Membership'>;
-export type VolunteerProps = MaterialTopTabScreenProps<TabParamList, 'Volunteer'>;
+
 
 export default function App() {
   return (
@@ -41,11 +42,13 @@ export default function App() {
 
         <Tab.Screen name="Bookings" component={Bookings} />
 
+        <Tab.Screen name="Volunteer" component={Volunteer} />
+
         <Tab.Screen name="Gallery" component={Gallery} />
 
         <Tab.Screen name="Membership" component={Membership} />
 
-        <Tab.Screen name="Volunteer" component={Volunteer} />
+        
 
       </Tab.Navigator>
     </NavigationContainer>
