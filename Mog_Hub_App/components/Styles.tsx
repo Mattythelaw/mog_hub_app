@@ -135,6 +135,26 @@ const styles = StyleSheet.create({
     stepDesc: {
         fontSize: 12,
     },
+
+    // Gallery page images styling
+    galleryItem: {
+        marginBottom: 10,
+        marginTop: 10,
+    },
+
+    galleryImage: {
+        width: 20,
+        height: 200,
+        alignSelf: 'center',
+        aspectRatio: 1,
+    },
+
+    galleryName: {
+        textAlign: 'center',
+        fontSize: 12,
+        fontWeight: 'bold',
+        marginTop: 4,
+    },
 });
 
 export default styles;

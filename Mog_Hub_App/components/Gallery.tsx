@@ -4,7 +4,7 @@ import styles from './Styles';
 // Image of pet with their name 
 const pets = [
     { name: 'Whispers', image: require('../images/cat1.png')},
-    { name: 'Orange', image: require('../images/cat2png')},
+    { name: 'Orange', image: require('../images/cat2.png')},
     { name: 'Charcy', image: require('../images/cat3.png')},
     { name: 'Sweety', image: require('../images/dog1.png')},
     { name: 'Hulk', image: require('../images/dog2.png')},
