@@ -7,3 +7,10 @@ import styles from './Styles';
 const interests = ['Sports', 'Movies', 'Books', 'Travel', 'Fitness', 'Arts'];
 
 
+export default function Membership() {
+    // Adding state varibles for the form fields
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [email, setEmail] = useState('');
+    const [interest, setInterest ] = useState('');
+}
