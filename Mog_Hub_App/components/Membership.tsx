@@ -26,49 +26,68 @@ export default function Membership() {
 
     const handleSubmit = () => {
         // This will check if the fields are filled 
-
-    }
-
-return (
-    <SafeAreaView style={styles.bookingsContainer}>
-        <ScrollView contentContainerStyle={styles.formContainer}>
-
-            {/* This is for the name field */}
-            <Text style={styles.enterTxt}>Name*</Text>
-
-            <TextInput styles={styles.formInput} value={name} 
-                onChangeText={setName}
-            />
+        if (!isEmpty(name) && !isEmpty (surname) && !isEmpty(email)) {
+            setError(false);
+            console.log("Form submitted suucessfully");
+            console.log("Name:", name, "Surname:", surname, "Email:", email, "Interests:", interests);
+        } else {
             
-            {/* This is for the surname field */}
-            <Text style={styles.enterTxt}>Surname*</Text>
+            // Displaying error message 
+            setError(true);
+        }
+    };
 
-            <TextInput styles={styles.formInput} value={surname} 
-                onChangeText={setSurname}
-            />
+    return (
+        <SafeAreaView style={styles.bookingsContainer}>
+            <ScrollView contentContainerStyle={styles.formContainer}>
 
-            {/* This is email field */}
-            <Text style={styles.enterTxt}>Email*</Text>
+                {/* This is for the name field */}
+                <Text style={styles.enterTxt}>Name*</Text>
 
-            <TextInput styles={styles.formInput} value={email} 
-                onChangeText={setEmail} keyboardType="email-addres"
-                autoCapitalize='none'
-            />
+                <TextInput style={styles.formInput} value={name} 
+                    onChangeText={setName}
+                />
+                
+                {/* This is for the surname field */}
+                <Text style={styles.enterTxt}>Surname*</Text>
 
-            {/* Interests radio buttons */}
-            <Text style={styles.enterTxt}>Interests</Text>
-            <RadioButton.Group onValueChange={(value: string) => setInterest(value)}
-                value={interest}
-            >
-            
-                {interests.map((item) => (
-                    <View key={item} style={styles.interestRow}>
-                        <RadioButton.Android value={item} color="orange" />
-                        <Text>{item}</Text>
-                    </View>
-                ))}
-            </RadioButton.Group>
+                <TextInput style={styles.formInput} value={surname} 
+                    onChangeText={setSurname}
+                />
 
-        </ScrollView>
-    </SafeAreaView>
-)
+                {/* This is email field */}
+                <Text style={styles.enterTxt}>Email*</Text>
+
+                <TextInput style={styles.formInput} value={email} 
+                    onChangeText={setEmail} keyboardType="email-address"
+                    autoCapitalize='none'
+                />
+
+                {/* Interests radio buttons */}
+                <Text style={styles.enterTxt}>Interests</Text>
+                <RadioButton.Group onValueChange={(value: string) => setInterest(value)}
+                    value={interest}
+                >
+                
+                    {interests.map((item) => (
+                        <View key={item} style={styles.interestRow}>
+                            <RadioButton.Android value={item} color="orange" />
+                            <Text>{item}</Text>
+                        </View>
+                    ))}
+                </RadioButton.Group>
+
+                {/* Adding error message for when a field is blank */}
+                {error && (
+                    <Text style={styles.errorTxt}>
+                        Please fill in Name, Surname and Email
+                    </Text>
+                )}
+
+                {/* Button to submit */}
+                <Button title="Submit" onPress={handleSubmit}/>
+
+            </ScrollView>
+        </SafeAreaView>
+    );
+}
