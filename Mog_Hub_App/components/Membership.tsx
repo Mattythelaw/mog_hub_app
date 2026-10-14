@@ -24,3 +24,9 @@ export default function Membership() {
         );
     }
 }
+
+return (
+    <SafeAreaView style={styles.bookingsContainer}>
+        <ScrollView></ScrollView>
+    </SafeAreaView>
+)

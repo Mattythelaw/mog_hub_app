@@ -155,6 +155,28 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 4,
     },
+
+    // Adding styling for the membership form fields
+    formContainer: {
+        padding: 20,
+    },
+
+    formInput: {
+        borderBottomWidth: 1,
+        marginBottom: 15,
+        paddingVertical: 4,
+    },
+
+    errorTxt: {
+        color: 'red',
+        fontSize: 12,
+        marginVertical: 10,
+    },
+
+    interestRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
 });
 
 export default styles;
