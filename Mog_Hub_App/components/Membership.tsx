@@ -3,10 +3,7 @@ import React, { useState } from 'react';
 import { RadioButton } from 'react-native-paper';
 import styles from './Styles';
 
-export default function Membership() {
-    return (
-        <View>
-            <Text>Become a member</Text>
-        </View>
-    );
-}
+// Added the constants for list of interests
+const interests = ['Sports', 'Movies', 'Books', 'Travel', 'Fitness', 'Arts'];
+
+
