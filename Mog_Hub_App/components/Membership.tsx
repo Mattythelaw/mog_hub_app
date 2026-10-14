@@ -27,6 +27,30 @@ export default function Membership() {
 
 return (
     <SafeAreaView style={styles.bookingsContainer}>
-        <ScrollView></ScrollView>
+        <ScrollView contentContainerStyle={styles.formContainer}>
+
+            {/* This is for the name field */}
+            <Text style={styles.enterTxt}>Name*</Text>
+
+            <TextInput styles={styles.formInput} value={name} 
+                onChangeText={setName}
+            />
+            
+            {/* This is for the surname field */}
+            <Text style={styles.enterTxt}>Surname*</Text>
+
+            <TextInput styles={styles.formInput} value={surname} 
+                onChangeText={setSurname}
+            />
+
+            {/* This is email field */}
+            <Text style={styles.enterTxt}>Email*</Text>
+
+            <TextInput styles={styles.formInput} value={email} 
+                onChangeText={setEmail} keyboardType="email-addres"
+                autoCapitalize='none'
+            />
+
+        </ScrollView>
     </SafeAreaView>
 )
