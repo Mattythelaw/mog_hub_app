@@ -13,4 +13,14 @@ export default function Membership() {
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
     const [interest, setInterest ] = useState('');
+
+    // Adding the useState variable for validation errors
+    const [error, setError] = useState(false);
+
+    // Adding a function for to check if the form is empty
+    function isEmpty(value: string) {
+        return (
+            value == null || value.trim().length === 0
+        );
+    }
 }
