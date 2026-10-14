@@ -12,7 +12,7 @@ export default function Membership() {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
-    const [interest, setInterest ] = useState('');
+    const [interest, setInterest ] = useState('Sports');
 
     // Adding the useState variable for validation errors
     const [error, setError] = useState(false);
@@ -23,7 +23,11 @@ export default function Membership() {
             value == null || value.trim().length === 0
         );
     }
-}
+
+    const handleSubmit = () => {
+        // This will check if the fields are filled 
+
+    }
 
 return (
     <SafeAreaView style={styles.bookingsContainer}>
@@ -50,6 +54,20 @@ return (
                 onChangeText={setEmail} keyboardType="email-addres"
                 autoCapitalize='none'
             />
+
+            {/* Interests radio buttons */}
+            <Text style={styles.enterTxt}>Interests</Text>
+            <RadioButton.Group onValueChange={(value: string) => setInterest(value)}
+                value={interest}
+            >
+            
+                {interests.map((item) => (
+                    <View key={item} style={styles.interestRow}>
+                        <RadioButton.Android value={item} color="orange" />
+                        <Text>{item}</Text>
+                    </View>
+                ))}
+            </RadioButton.Group>
 
         </ScrollView>
     </SafeAreaView>
