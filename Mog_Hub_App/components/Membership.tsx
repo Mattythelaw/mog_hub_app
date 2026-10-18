@@ -15,7 +15,7 @@ export default function Membership() {
     const [interest, setInterest ] = useState('Sports');
 
     // Adding the useState variable for validation errors
-    const [error, setError] = useState(false);
+    const [error, setError] = useState({ name: "", surname: "", email: ""});
 
     // Adding a function for to check if the form is empty
     function isEmpty(value: string) {
@@ -36,6 +36,24 @@ export default function Membership() {
             setError(true);
         }
     };
+
+    function validateName(value: string) {
+        const text = value.trim();
+
+        if (isEmpty(text)) return 'This field is required';
+
+        // Only enter number into the name and surname inputs
+        if (!/^[A-Za-z]+$/.test(text)) return 'Please enter with letters only';
+
+        // Minimum of 3 characters 
+        if (text.length < 3 || text.length > 15) "Must be 3 to 15 letters";
+
+        // All rules passed
+        return '';
+
+    }
+
+    // Validating the email
 
     return (
         <SafeAreaView style={styles.bookingsContainer}>
