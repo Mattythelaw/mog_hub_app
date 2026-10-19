@@ -25,6 +25,12 @@ export default function Membership() {
     }
 
     const handleSubmit = () => {
+
+        const neErrors = {
+            name: validateName(name),
+            surname: validateName(surname),
+            email: validateEmail(email),
+        }
         // This will check if the fields are filled 
         if (!isEmpty(name) && !isEmpty (surname) && !isEmpty(email)) {
             setError(false);
@@ -54,6 +60,28 @@ export default function Membership() {
     }
 
     // Validating the email
+    function validateEmail(value: string) {
+        const text = value.trim();
+        if (isEmpty(text)) return 'Email is required';
+
+        const atPos = text.indexOf('@');
+        const dotPos = text.indexOf('.', atPos + 1);
+
+        // Use must include an @ symbol and '.' after it
+        if (atPos === -1 || dotPos === -1 ) return 'Email must include an "@" and a "."';
+
+        // It must be at least 3 characters before the '@'
+        if (atPos < 3) return 'Need at least 3 characters before the "@"';
+
+        // Use must type at least 3 characters betweeb the "@" and the "."
+        if (dotPos - atPos -1 < 3 ) return 'Need at least 3 characters between teh "@" and the "."';
+
+        // All validation must be passed
+        return '';
+
+
+
+    }
 
     return (
         <SafeAreaView style={styles.bookingsContainer}>
