@@ -15,7 +15,7 @@ export default function Membership() {
     const [interest, setInterest ] = useState('Sports');
 
     // Adding the useState variable for validation errors
-    const [error, setError] = useState({ name: "", surname: "", email: ""});
+    const [errors, setErrors] = useState({ name: "", surname: "", email: ""});
 
     // Adding a function for to check if the form is empty
     function isEmpty(value: string) {
@@ -26,21 +26,18 @@ export default function Membership() {
 
     const handleSubmit = () => {
 
-        const neErrors = {
+        const newErrors = {
             name: validateName(name),
             surname: validateName(surname),
             email: validateEmail(email),
-        }
+        };
+        setErrors(newErrors);
+
         // This will check if the fields are filled 
-        if (!isEmpty(name) && !isEmpty (surname) && !isEmpty(email)) {
-            setError(false);
+        if (newErrors.name === '' && newErrors.surname === '' && newErrors.email === '') {
             console.log("Form submitted suucessfully");
             console.log("Name:", name, "Surname:", surname, "Email:", email, "Interests:", interests);
-        } else {
-            
-            // Displaying error message 
-            setError(true);
-        }
+        } 
     };
 
     function validateName(value: string) {
@@ -93,6 +90,7 @@ export default function Membership() {
                 <TextInput style={styles.formInput} value={name} 
                     onChangeText={setName}
                 />
+                {errors.name !== '' && <Text style={styles.errorTxt}>{errors.name}</Text>}
                 
                 {/* This is for the surname field */}
                 <Text style={styles.enterTxt}>Surname*</Text>
@@ -100,6 +98,7 @@ export default function Membership() {
                 <TextInput style={styles.formInput} value={surname} 
                     onChangeText={setSurname}
                 />
+                {errors.surname !== '' && <Text style={styles.errorTxt}>{errors.surname}</Text>}
 
                 {/* This is email field */}
                 <Text style={styles.enterTxt}>Email*</Text>
@@ -108,6 +107,7 @@ export default function Membership() {
                     onChangeText={setEmail} keyboardType="email-address"
                     autoCapitalize='none'
                 />
+                {errors.email !== '' && <Text style={styles.errorTxt}>{errors.email}</Text>}
 
                 {/* Interests radio buttons */}
                 <Text style={styles.enterTxt}>Interests</Text>
@@ -122,13 +122,6 @@ export default function Membership() {
                         </View>
                     ))}
                 </RadioButton.Group>
-
-                {/* Adding error message for when a field is blank */}
-                {error && (
-                    <Text style={styles.errorTxt}>
-                        Please fill in Name, Surname and Email
-                    </Text>
-                )}
 
                 {/* Button to submit */}
                 <Button title="Submit" onPress={handleSubmit}/>
